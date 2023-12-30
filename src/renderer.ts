@@ -27,5 +27,4 @@
  */
 
 import "./index.css";
-
-console.log("👋 Hello World");
+import "./app/app";
