@@ -9,7 +9,12 @@ const root = createRoot(document.getElementById("app"));
 
 root.render(
   <Provider store={store}>
-    <Theme>
+    <Theme
+      appearance="dark"
+      radius="small"
+      accentColor="purple"
+      panelBackground="solid"
+    >
       <Router />
     </Theme>
   </Provider>

@@ -2,13 +2,18 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Update from "./pages/Update";
 
+export const locations = {
+  landing: "/",
+  update: "/update",
+};
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: locations.landing,
     element: <Landing />,
   },
   {
-    path: "/update",
+    path: locations.update,
     element: <Update />,
   },
 ]);

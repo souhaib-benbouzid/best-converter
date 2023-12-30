@@ -1,14 +1,11 @@
 import { Flex, Box } from "@radix-ui/themes";
-import { useState } from "react";
 import { Conversion } from "../types";
-import { conversions as conversionsData } from "../data";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { addCoin } from "../store/slices";
+import { Navbar } from "../components/Navbar";
 
 export default function Landing() {
-  const [conversions, setConversions] = useState<Conversion[]>(conversionsData);
-  const [bestMethod, setBestMethod] = useState<string>("");
   const coins = useAppSelector((state) => state.coins.data);
+  const conversions = useAppSelector((state) => state.conversions.data);
   const dispatch = useAppDispatch();
 
   const handleApplyConversion = (amount: number, conversion: Conversion) => {
@@ -22,10 +19,11 @@ export default function Landing() {
 
   return (
     <Flex direction="column" gap="3">
+      <Navbar />
       <Box width="9" height="9">
         <Flex direction="column" gap="1">
           {conversions.map((conversion) => (
-            <Flex id={conversion.id}>
+            <Flex key={conversion.id}>
               <pre>
                 <code>{JSON.stringify(conversion, null, 2)}</code>
               </pre>
@@ -34,7 +32,7 @@ export default function Landing() {
         </Flex>
         <Flex direction="column" gap="1">
           {coins.map((coin) => (
-            <Flex id={coin.code}>
+            <Flex key={coin.code}>
               <pre>
                 <code>{JSON.stringify(coin, null, 2)}</code>
               </pre>
