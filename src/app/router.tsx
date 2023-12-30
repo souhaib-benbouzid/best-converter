@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Landing from "./pages/Landing";
+import Update from "./pages/Update";
 
 const router = createBrowserRouter([
   {
@@ -7,8 +8,8 @@ const router = createBrowserRouter([
     element: <Landing />,
   },
   {
-    path: "/table",
-    element: <div>table</div>,
+    path: "/update",
+    element: <Update />,
   },
 ]);
 
