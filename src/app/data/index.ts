@@ -57,6 +57,6 @@ export const coins: Coin[] = [
   },
   {
     code: CoinCodes.DZD,
-    name: "USDT",
+    name: "DZD",
   },
 ];
